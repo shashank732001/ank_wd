@@ -1,0 +1,1 @@
+web: gunicorn ank_wd.wsgi --log-file - 
