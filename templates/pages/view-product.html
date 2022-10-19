@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+
+{% block content %}
+
+<div class = 'bg-text ' style="float:none;margin:auto;margin-top: 50px;">
+
+	<a  class="btn btn-outline-dark" href="{% url 'products' %}">&#x2190;Back to products</a>
+
+	<div class = 'col-lg-12 '  >
+		<h2 style="text-align:center;background-color:#262625;color:#cf834c;">{{product.name}}</h2>
+		<img  src="{{product.product_pic.url}}" height=200px style='float:left;' >
+		<h3 style='color:#fff;'>&#x20B9;{{product.price}}</h3>
+		<h7 style='color:#fff;'>Category : {{product.category}}</h7>
+
+		<h5 style='color:#fff;'>{{product.description}}</h5>
+
+		
+	</div>
+</div>		
+{% endblock %}

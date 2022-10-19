@@ -1,0 +1,61 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block content %}
+
+<style>
+	.profile-pic{
+		max-width: 300px;
+		max-height:300px;
+		margin: 0 auto;
+		border-radius: 50%;
+	}
+</style>
+
+<br>
+<div class="row">
+	<div class="col-md-4">
+		<div class="card card-body" style="background-color:transparent;">
+			<a class="btn btn-dark" href="{% url 'home' %}"> &#8592; Back to Profile</a>
+			<hr>
+			<h2 style="text-align:center;background-color:#262625;color:#cf834c;">Account Settings</h2>
+			<hr>
+			<img class="profile-pic" src="{{request.user.customer.profile_pic.url}}" >
+		
+		</div>
+	</br>
+	</div>
+	<div class="col-md-6">
+		
+		<div class="box-2">
+			
+			<form method="POST" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+				
+					<div class="form-group">
+						<i class="fa fa-user icon" style="background-color:#262625;">{{ form.name }}</i>
+						<i class="fa fa-phone icon" style="background-color:#262625;">{{ form.phone }}</i>
+						<i class="fa fa-envelope icon" style="background-color:#262625;">{{form.email}}</i>
+    				</div>
+
+    				<div class="form-group">
+    					<i class="fa fa-camera icon" style="background-color:#262625;">
+    						{{ form.profile_pic }}
+    					</i>
+    						
+    					
+						
+					<input class="btn btn-primary" type="submit" name="Update Information">	
+    				</div>
+    				
+				
+			
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}

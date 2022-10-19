@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{%block content%}
+<br>
+	<form method='POST' action="">
+		{% csrf_token %}
+		<div class = 'bg-text ' style="float:none;margin:auto;">
+			<div class = 'col-lg-6 ' style="float:none;margin:auto;">
+		      		<h2 style="text-align:center;background-color:#262625;color:#cf834c;">USER LOGIN</h2>
+		      		<br>
+		      		
+		      		<div class="input-container" style="float:none;margin:auto;">
+			      		<i class="fa fa-user icon" style="background-color:#262625;"></i>
+				        <input type="text" name="username" placeholder="Username" required>
+			    	</div>
+
+			    	<div class="input-container" style="float:none;margin:auto;margin-top: 10px;">
+				        <i class="fa fa-key icon" style="background-color:#262625;"></i>
+				        <input type="password" name="password" placeholder="Password" required>
+			    	</div>
+			        
+		    </div>
+
+		    <div class = 'col-lg-2 ' style="float:none;margin:auto;">
+		    		<input type="submit" value="Login">
+		    		
+		    </div> 
+
+		    <div class='col-lg-4'style="float:left;margin:auto;">
+	          <h5 style="text-align:center;background-color:#262625;color:#cf834c;">Don't have an account?</h5>
+	          	<div class = 'col-lg-8 ' style="float:none;margin:auto;">
+	      			<a href="{% url 'register' %}"class="btn btn-secondary">Signup</a>
+	  			</div>
+	  		</div>
+
+	  		<div class='col-lg-4'style="float:right;margin:auto;">
+	          <h5 style="text-align:center;background-color:#262625;color:#cf834c;">Forgot password?</h5>
+	         	<div class = 'col-lg-10 ' style="right:none;margin:auto;">
+	      			<a href="{% url 'password_reset' %}"class="btn btn-secondary">Reset password</a>
+	  			</div>
+	  		</div>
+
+	  		{% for message in messages%}
+			<p id ='messages'>{{message}}</p>
+			{% endfor%}
+	  	</div>		
+	</form>
+
+
+
+  
+
+<br> 
+
+
+
+
+
+ 
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+	<div class="col-md-4" style="float:none;margin:auto;">
+		<div class="card card-body">
+			<p>Are you sure you want to delete the {{item.order}} : "{{item.product}}"?</p>
+
+			<form action='' method='POST'>
+				{% csrf_token %}
+				
+				<input class="btn btn-outline-primary" type='submit' name = 'Confirm'>
+				<a class="btn btn-outline-danger " href = "{% url 'status' %}">Cancel</a>
+			</form>	
+		</div>
+	</div>	
+</div>		
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-8" style="float:none;margin:auto;">
+		<div class="card card-body ">
+			<h2>Add product</h2>
+			<hr>
+			<form method="POST" action="" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="form-group" style="float:none;margin:auto;">
+				<p></p>
+				<i class="fa fa-cutlery icon" style="background-color:#262625;">{{form.name.label}} : {{form.name}}</i>
+
+				<i class="fa fa-cutlery icon" style="background-color:#262625;">{{form.price.label}} : {{form.price}}</i>
+
+				<i class="fa fa-cutlery icon" style="background-color:#262625;">{{form.product_pic.label}} : {{form.product_pic}}</i>
+
+				<i class="fa fa-cutlery icon" style="background-color:#262625;margin-top: 10px">{{form.description.label}} : {{form.description}}</i>
+    			
+    			<i class="fa fa-cutlery icon" style="background-color:#262625;margin-top: 10px">{{form.category.label}} : {{form.category}}</i>
+    		</div>
+
+    		<div class="row">
+    			<div class="col-md-16" style="float:none;margin:auto;">
+    				<i class="fa fa-cutlery icon" style="background-color:#262625;margin-top: 10px">{{form.tags.label}}:{{form.tags}}</i>
+    			</div>
+			</div>
+
+		
+			
+			<input class="btn btn-outline-primary"  type='submit' name='Submit'>
+			</form>	
+		</div>
+	</div>
+</div>
+
+{% endblock %}

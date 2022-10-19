@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+
+{% if user.is_staff%}
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+			<form method="get">
+				<i class="fa fa-name icon" style="background-color:#262625;">{{myFilter.form.product.label}}:{{myFilter.form.product}}</i>
+
+				<i class="fa fa-name icon" style="background-color:#262625; width:250px;">{{myFilter.form.order.label}}:{{myFilter.form.order}}</i>
+
+				<i class="fa fa-name icon" style="background-color:#262625; width:250px">{{myFilter.form.status.label}}:{{myFilter.form.status}}</i>
+				
+				<i class="fa fa-name icon" style="background-color:#262625; width:300px">Search between dates from ~ to :{{myFilter.form.start_date}}
+				{{myFilter.form.end_date}}</i>
+
+				<i class="fa fa-name icon" style="background-color:#262625;width:150px;float:right"><a class='btn btn-primary' href="{% url 'status' %}">Clear Search</a></i>
+
+				<button class="btn btn-small-secondary" type="submit" name ='Search'>Search</button>
+				
+			</form>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Total Orders</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{total_orders1}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivered">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Orders Delivered</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{delivered1}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-pending">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Orders Pending</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{pending1}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Customer</th>
+					<th>Product</th>
+					<th>Quantity</th>
+					<th>Category</th>
+					<th>Ordered Time </th>
+					<th>Status</th>
+					<th>Update</th>
+					<th>Remove</th>
+				</tr>
+				{% for i in all_orders %}
+				<tr>
+					<td>{{i.order.customer}}</td>
+					<td>{{i.product}}</td>
+					<td>{{i.quantity}}</td>
+					<td>{{i.product.category}}</td>
+					<td>{{i.date_added}}</td>
+					<td>{{i.status}}</td>
+          			<td><a class='btn btn-sm btn-primary' href='{% url "update-status" i.id %}'>update</a></td>
+          			<td><a class='btn btn-sm btn-danger' href='{% url "delete-cart-item" i.id %}'>remove</a></td>					
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+{%else%}
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+			<form method="get">
+				<i class="fa fa-name icon" style="background-color:#262625;">{{myFilter1.form.product.label}}:{{myFilter.form.product}}</i>
+
+				
+
+				<i class="fa fa-name icon" style="background-color:#262625; width:250px">{{myFilter1.form.status.label}}:{{myFilter.form.status}}</i>
+				
+				<i class="fa fa-name icon" style="background-color:#262625; width:300px">Search between dates from ~ to :{{myFilter.form.start_date}}
+				{{myFilter1.form.end_date}}</i>
+
+				<i class="fa fa-name icon" style="background-color:#262625;width:150px;float:right"><a class='btn btn-primary' href="{% url 'status' %}">Clear Search</a></i>
+
+				<button class="btn btn-small-secondary" type="submit" name ='Search'>Search</button>
+				
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Total Orders</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{total_orders}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivered">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Orders Delivered</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{delivered}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-pending">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Orders Pending</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{pending}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Product</th>
+					<th>Category</th>
+					<th>Quantity</th>
+					<th>Ordered Time </th>
+					<th>Status</th>
+					
+				</tr>
+				{% for order in items %}
+				
+				<tr>
+					<td>{{order.product.name}}</td>
+					<td>{{order.product.category}}</td>
+					<td>{{order.quantity}}</td>
+					<td>{{order.date_added}}</td>
+					<td>{{order.status}}</td>
+          								
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+{%endif%}
+
+
+{% endblock content %}

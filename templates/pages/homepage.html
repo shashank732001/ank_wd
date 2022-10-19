@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<br>
+{% if user.is_staff %}
+  <div class="row">
+    <div class="col-md-4">
+      <div class="col-md-6" style="float:none;margin:auto;" ><h3 style="background-color:#fff;color:#000000;"><b> CUSTOMERS : </b></h3></div>
+      <hr>
+      <div class="card card-body"style="margin-left: 10px;margin-right: 10px;">
+        
+        <table class="table table-sm">
+          <tr>
+            <th></th>
+            <th>Customer</th>
+            <th>Phone</th>
+          </tr>
+          {% for customer in customers %}
+          <tr>
+            <td><a  href=''>view</a></td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.phone}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="col-md-4 text-center" style="float:none;margin:auto;" ><h3 style="background-color:#fff;color:#000000;"><b> RECENT ORDERS : </b></h3></div>
+      <hr>
+      <div class="card card-body" style="margin-left: 10px;margin-right: 10px;">
+        
+        <table class="table table-sm">
+          <tr>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Ordered time</th>
+            <th>Status</th>
+            
+          </tr>
+          
+          {% for i in orders %}
+          <tr>
+            <td>{{i.order.customer}}</td>
+            <td>{{i.product.name}}</td>
+            
+            <td>{{i.quantity}}</td>
+            
+            <td>{{i.date_added}}</td>
+            <td>{{i.status}}</td>
+            
+          </tr>
+          {% endfor %}
+
+      
+        </table>
+      </div>
+    </div>
+
+  </div></br>
+  {% else %}
+  <div class = 'bg-text ' style="float:none;margin:auto;">
+    <h1 style="text-align:center;background-color:#262625;color:#cf834c;">Hello, {{request.user}}</h1>
+      <div class = 'col-lg-6 ' style="float:none;margin:auto;">
+      <a class="btn btn-dark" href="{% url 'products' %}">Let's Order Something<div class="arrow-1" style="float:none;margin:auto;"></div>
+      </a>
+      
+    </div>
+  </div>
+  
+
+
+
+ 
+  
+ 
+  {%endif%}
+
+
+
+
+
+{% endblock %}
