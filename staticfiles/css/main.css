@@ -1,0 +1,102 @@
+/*for order status containers*/
+
+#logo{
+	width:120px;
+	display: inline-block;
+	margin-left: 15px;
+	}
+
+	html {
+    min-height: 100%;
+    position: relative;
+	}
+
+	body{
+	
+	background-color: #cccccc;
+	background-image: url('/static/images/bg3.jpg');
+	
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+	}
+
+	.spacer {
+    flex: 1;
+	}
+
+
+	.bg-text {
+	  background-color: rgb(0,0,0); 
+	  background-color: rgba(0,0,0, 0.4); 
+	  color: white;
+	  font-weight: bold;
+	  border: 3px solid #f1f1f1;
+	  position: absolute;
+	  left: 50%;
+	  top: 50%;
+	  transform: translate(-50%, -50%);
+	  z-index: 2;
+	  width: 60%;
+	  padding: 20px;
+	  text-align: center;
+	}
+
+	#total-orders{
+		background-color: #4cb4c7;
+	}
+
+
+	#orders-delivered{
+		background-color: #7abecc;
+	}
+
+	#orders-pending{
+		background-color: #7CD1C0;
+	}
+
+
+
+/*hello user*/
+#hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+  }
+
+.blur-background  {
+    background: #CCC;
+    background-color: transparent;
+    filter: blur(5px) brightness(0.5);
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width:100%;
+}
+
+.box2 {
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
+}
+
+.items-nav{
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0, 0.7);
+	padding: 20px;
+	text-align: center;
+
+}
+
+.items-nav:hover {
+  opacity: 0.5;
+}
+
+.footer {
+    height: 50px;
+    background-color: transparent;
+    
+}
