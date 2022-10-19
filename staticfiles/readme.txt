@@ -1,0 +1,1 @@
+done using collectstatic command
