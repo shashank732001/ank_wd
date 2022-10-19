@@ -1,0 +1,102 @@
+/*for order status containers*/
+
+#logo{
+	width:120px;
+	display: inline-block;
+	margin-left: 15px;
+	}
+
+	html {
+    min-height: 100%;
+    position: relative;
+	}
+
+	body{
+	
+	background-color: #cccccc;
+	background-image: url('https://ank-732001-bucket.s3.ap-northeast-1.amazonaws.com/pexels-pixabay-326281.jpg?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG0aCmFwLXNvdXRoLTEiRzBFAiEAjQmTL29Dq81obTrTrRZJREju9WKbnyfrmKPqwtnL2JACIG%2FjgZtk%2BwCYcWN12WN3ocvQcYR8xuXDiLHjBeDSM%2Bh4KuICCEYQABoMMDAwMDA5OTE4MzY1Igxzex1SF1vUyX3izEYqvwK23dZz%2BnmtYvNTMO6X35FLZdHZ3AbiD8pQHpMb1qeAmUJpACuutYnZwX4vh6inHUnJoDQYaf5QHbdwWPxL00wBMI6xqiRsLCY11T%2F6%2F2CXFDvtvHT3dPv4QX6iL9L5Wad0k9STpXvv6ScWZlaimlTiITgDbQ7ifRMSELxtanbGpzCt42J5gXHQMxILyX7wtiTP3tS1uAaLVht74SQ1dir%2FRH8BFfoD0BfrWXvoX8kjcvad7yV3qOZKxGiSY1nddNy4MEQ%2B9umjkaKnrRt8GTD%2BnQM9ueCbWgtuZeIm1R%2BF8tu72C1xGxak7EVxNLgGCXPGyqcs2beDbKhsEEdRp6VInEKM9uEV8xmJHhtm9vXaPDbsz0ee5IxdRA8DnekEL9L4wexUX4bz5CiMEiH9qBWxU1vZ2mc%2FHffVtSqt5UlvMKTov5oGOrUCCjWFDO2TCrU7HhgVqAqsmKtuDdofOwZEb9myspAprcjk2bswR96F8JHpetWF0Odfit3kpnjWQfrrGzl6FVuqr6AvdEr4BecP1hOm20EvERNyCTWGjPoK3S9clxCTP8WVhskj7SsHhymaBmSKiCJwrRsQjEY5JLdGMKeI7sBFKv8hQtZuj%2BGknfGHcHZgLsxlOuePJFpG1FiEW4AkzsFIu60LjRb5gcXOT64EW6LOayU%2FFQ4%2FyBoH8BjgSPdA5%2Fw1T56SlojPHfO1QHVSWf2p5%2Fw06XKlrXWFaIyDag8lou96FrCgY3ssRmYSzmbAwF27pr8IyDSGIG7DTce1lQtYpCQq9ptDN8oAl27hioJehh%2BMzz1fTEEGqOQn52kt1RqhNr6hemx4XqsMvRq8RFhbgrQwRBTs&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20221019T133945Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQAAEXK6O43622P6U%2F20221019%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Signature=d3be0ede44623ccb24a23aa37332407964b8288f33ace7d6da525d92717cd0f7');
+	
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+	}
+
+	.spacer {
+    flex: 1;
+	}
+
+
+	.bg-text {
+	  background-color: rgb(0,0,0); 
+	  background-color: rgba(0,0,0, 0.4); 
+	  color: white;
+	  font-weight: bold;
+	  border: 3px solid #f1f1f1;
+	  position: absolute;
+	  left: 50%;
+	  top: 50%;
+	  transform: translate(-50%, -50%);
+	  z-index: 2;
+	  width: 60%;
+	  padding: 20px;
+	  text-align: center;
+	}
+
+	#total-orders{
+		background-color: #4cb4c7;
+	}
+
+
+	#orders-delivered{
+		background-color: #7abecc;
+	}
+
+	#orders-pending{
+		background-color: #7CD1C0;
+	}
+
+
+
+/*hello user*/
+#hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+  }
+
+.blur-background  {
+    background: #CCC;
+    background-color: transparent;
+    filter: blur(5px) brightness(0.5);
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width:100%;
+}
+
+.box2 {
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
+}
+
+.items-nav{
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0, 0.7);
+	padding: 20px;
+	text-align: center;
+
+}
+
+.items-nav:hover {
+  opacity: 0.5;
+}
+
+.footer {
+    height: 50px;
+    background-color: transparent;
+    
+}
